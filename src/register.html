@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="telephone=no" , name="format-detection">
+    <title>用户注册</title>
+    <!-- build:css css/register.css -->
+    <link href="css/aui.css" rel="stylesheet" type="text/css">
+    <link href="css/common.less" rel="stylesheet" type="text/css">
+    <link href="css/register.less" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
+</head>
+<body>
+<div class="register">
+    <div class="register-inner">
+        <div class="ri-wrap">
+            <div class="title">注册立即领取</div>
+            <!--<div class="code">-->
+                <!--<span class="key">邀请码：</span>-->
+                <!--<span class="value" id="inviteCode"></span>-->
+            <!--</div>-->
+            <!--<form class="register-form" id="registerForm">-->
+                <!--<div class="register-input">-->
+                    <!--<input placeholder="请输入手机号" name="phone" type="tel" id="phone">-->
+                <!--</div>-->
+                <!--<div class="register-code">-->
+                    <!--<div class="register-input">-->
+                        <!--<input placeholder="请输入验证码" name="verifyCode" type="tel" id="verifyCode">-->
+                    <!--</div>-->
+                    <!--<span id="send" onclick="Register.sendVerifyCode()"></span>-->
+                <!--</div>-->
+                <!--<div class="register-input">-->
+                    <!--<input placeholder="请输入密码" name="password" type="password" id="password">-->
+                <!--</div>-->
+                <!--<button class="submit-btn" onclick="Register.onSubmit(event)">注册</button>-->
+            <!--</form>-->
+            <section class="aui-content signup-wrap">
+                <ul class="aui-list aui-list-noborder aui-form-list login-form">
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-mobile"></i>
+                            </div>
+                            <div class="aui-list-item-input">
+                                <input type="tel" placeholder="请输入您的手机号码" id="tel">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-lock"></i>
+                            </div>
+                            <div class="aui-list-item-input">
+                                <input type="password" placeholder="请输入密码(至少6位数)" id="password">
+                            </div>
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-display" onclick="Register.switchPasswordInputType('password')"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-lock"></i>
+                            </div>
+                            <div class="aui-list-item-input">
+                                <input type="password" placeholder="请确认密码" id="verifyPassword">
+                            </div>
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-display" onclick="Register.switchPasswordInputType('verifyPassword')"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-paper"></i>
+                            </div>
+                            <div class="aui-list-item-input verify-code">
+                                <input type="tel" placeholder="请输入验证码" id="verifyCode">
+                            </div>
+                            <div class="aui-list-item-label-icon send-code" tapmode="" onclick="Register.sendVerifyCode()">
+                                |<span class="send-code-text" id="send"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-my"></i>
+                            </div>
+                            <div class="aui-list-item-input">
+                                <input type="text" placeholder="推荐人邀请码或扫描二维码" id="inviteCode">
+                            </div>
+                            <!--<div class="aui-list-item-label-icon" tapmode="" onclick="SignUp.showScanner()">-->
+                                <!--<span class="qrcode-icon"></span>-->
+                            <!--</div>-->
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label-icon icon-gray">
+                                <i class="aui-iconfont aui-icon-location"></i>
+                            </div>
+                            <div class="aui-list-item-input">
+                                <input type="text" placeholder="区域" id="place" readonly="readonly">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-label-icon icon-gray">
+                            <i class="aui-iconfont aui-icon-home" tapmode=""></i>
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-input">
+                                <input type="text" placeholder="详细地址" id="street">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--<div class="aui-btn aui-btn-block aui-btn-info aui-btn-sm btn-login" tapmode="" onclick="Register.onSubmit(event)">-->
+                    <!--<span>注册</span>-->
+                <!--</div>-->
+                <button class="submit-btn" onclick="Register.onSubmit(event)">注册</button>
+                <div class="signup_agree">
+                    <span class="agree-text">绑定即同意FNW智媒的</span>
+                    <span class="agree-link" tapmode="" onclick="">《用户协议》</span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+</div>
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=IXq9Pzl4zLAjsYcNLOI2ummIhR7e3UL7&s=1"></script>
+<!-- build:js js/register.js -->
+<script src="../libs/jquery-2.1.1.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/register.js"></script>
+<!-- endbuild -->
+</body>
+</html>

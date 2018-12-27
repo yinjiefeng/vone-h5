@@ -1,0 +1,149 @@
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei UI", Arial, Georgia, sans-serif;
+  font-size: 1em;
+}
+
+ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, button {
+  border:0;
+  outline:none;
+}
+
+@media only screen and (min-width: 240px) {
+  html {
+    font-size: 14.22222px;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 18.96296px;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  html {
+    font-size: 21.33333px;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 22.22222px;
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  html {
+    font-size: 23.11111px;
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 24.53333px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 28.44444px;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 33.92593px;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  html {
+    font-size: 34.66667px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 36.51111px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 45px;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  position: fixed;
+  z-index: 100;
+  top: 45%;
+  left: 50%;
+  width: 7.5em;
+  padding: 0.5rem;
+  margin-left: -3.75em;
+  font-size: 0.7rem;
+}
+
+.app-loading {
+  width: 100%;
+  height: 100%;
+  > img {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.app-load-error {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  > img {
+    margin-top: 8rem;
+  }
+  .error-text {
+    color: #ccc;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+}
