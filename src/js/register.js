@@ -5,9 +5,9 @@ var CLS_DISABLED = 'disabled';
 var MAX_COUNT_DOWN = 60;
 
 //dev
-// var ServerAddress = "http://192.168.0.103:19080";
+var ServerAddress = "http://47.110.247.106:18080";
 //prod
-var ServerAddress = "";
+// var ServerAddress = "";
 
 var Register = {
     inviteCode: null,
@@ -153,27 +153,38 @@ var Register = {
             return;
         }
 
-        var smsCode = $('#verifyCode').val();
-        if(!smsCode) {
-            Common.toast("验证码不能为空");
+        var password = $('#password').val();
+        if(!password) {
+            Common.toast("请输入密码");
             return;
         }
 
-        var password = $('#password').val();
-        if(!password) {
-            Common.toast("密码不能为空");
+        var verifyPassword = $('#verifyPassword').val();
+        if(!verifyPassword) {
+            Common.toast("请再次输入密码");
+            return;
+        }
+
+        if(password != verifyPassword) {
+            Common.toast("两次输入的密码不一致");
+            return;
+        }
+
+        var smsCode = $('#verifyCode').val();
+        if(!smsCode) {
+            Common.toast("请输入验证码");
             return;
         }
 
         var place = $('#place').val();
         if(!place) {
-            Common.toast("区域不能为空");
+            Common.toast("请输入区域");
             return;
         }
 
         this.street = $('#street').val();
         if(!this.street) {
-            Common.toast("详细地址不能为空");
+            Common.toast("请输入详细地址");
             return;
         }
 
@@ -250,8 +261,8 @@ var Register = {
                 context.district = addressComponent.district;
                 context.street = addressComponent.street;
 
-                $('#place').val(pos.province + pos.city + pos.district);
-                $('#street').val(pos.street);
+                $('#place').val(context.province + context.city + context.district);
+                $('#street').val(context.street);
 
                 if(!context.province) {
                     return;
