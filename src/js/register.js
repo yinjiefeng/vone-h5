@@ -5,9 +5,11 @@ var CLS_DISABLED = 'disabled';
 var MAX_COUNT_DOWN = 60;
 
 //dev
-var ServerAddress = "http://47.110.247.106:18080";
+// var ServerAddress = "http://47.110.247.106:18080";
 //prod
-// var ServerAddress = "";
+var ServerAddress = "";
+
+var donwloadUrl = "https://vonechn.com/down/index.html";
 
 var Register = {
     inviteCode: null,
@@ -211,7 +213,7 @@ var Register = {
                 } else {
                     Common.toast("注册成功");
                     setTimeout(function () {
-                        location.href = "https://app.xiyinshenghuo.com/index.html";
+                        location.href = donwloadUrl;
                     }, 2000);
                 }
             },
