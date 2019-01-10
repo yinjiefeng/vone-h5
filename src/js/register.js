@@ -32,6 +32,12 @@ var Register = {
 
         //调用监听
         this.monitor();
+        //初始化下载链接
+        this.initDownloadLink();
+    },
+    //初始化下载链接
+    initDownloadLink: function() {
+        $('.download-link').attr('href', donwloadUrl);
     },
     //设置邀请码
     setInviteCode: function(inviteCode) {
